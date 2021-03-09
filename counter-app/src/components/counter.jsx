@@ -1,6 +1,19 @@
 import React, { Component } from "react";
 
 class Counter extends Component {
+  componentDidUpdate(prevProps, prevState) {
+    console.log ("prevPros", prevProps);
+    console.log ("prevState", prevState);
+    if (prevProps.counter.value !== this.props.counter.value) {
+    // Ajax call and get new data from the server
+    }
+  }
+
+  componentWilllUnmount() {
+    console.log('Counter - Unmount');
+
+
+  }
   //state = {
     //value: this.props.counter.value //,
     //tags: ["tag1", "tag2", "tag3"],
@@ -32,6 +45,8 @@ class Counter extends Component {
   //};
 
   render() {
+    console.log("Counter - Rendered");
+
     // console.log('props', this.props);
     // let classes = this.getBadgeClasses();
     // getBadgeClasses
